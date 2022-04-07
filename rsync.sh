@@ -28,7 +28,10 @@ done
 
 # Assign and run final command
 source .rsync  # NOTE: requires .rsync environment file , e.g. RSYNC_SRC_DEST="/media/shane/shane4tb/ shane4tb"
-rsync_cmd="$rsync_cmd $RSYNC_SRC_DEST"
-printf "\\n\e[1;31m%s\e[0m\\n" "$rsync_cmd"
+DATE=$(date -Ins)
 
-$rsync_cmd
+mkdir -p .rsync_logs
+
+rsync_cmd="$rsync_cmd $RSYNC_SRC_DEST"
+printf "\\n\e[1;31m%s\e[0m\\n" "$rsync_cmd 2>&1 | tee .rsync_logs/output$DATE.txt"
+bash -c "$rsync_cmd" 2>&1 | tee .rsync_logs/output$DATE.txt
