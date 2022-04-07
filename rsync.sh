@@ -33,5 +33,7 @@ DATE=$(date -Ins)
 mkdir -p .rsync_logs
 
 rsync_cmd="$rsync_cmd $RSYNC_SRC_DEST"
-printf "\\n\e[1;31m%s\e[0m\\n" "$rsync_cmd 2>&1 | tee .rsync_logs/${real}output$DATE.txt"
-bash -c "$rsync_cmd" 2>&1 | tee .rsync_logs/${real}output$DATE.txt
+FRIENDLY_RSYNC_CMD="$rsync_cmd 2>&1 | tee -a .rsync_logs/${real}output$DATE.txt"
+printf "\\n\e[1;31m%s\e[0m\\n" "$FRIENDLY_RSYNC_CMD"
+echo $FRIENDLY_RSYNC_CMD > .rsync_logs/${real}output$DATE.txt
+bash -c "$rsync_cmd" 2>&1 | tee -a .rsync_logs/${real}output$DATE.txt
