@@ -1,3 +1,5 @@
+"Code Cache/"
+
 .cache/
 CacheStorage/
 Cache/
@@ -5,7 +7,7 @@ cache/
 ScriptCache/
 GPUCache/
 optimization_guide_hint_cache_store/
-Code Cache/
+"Code Cache/"
 *cache.data
 *cache.data-*
 
@@ -18,4 +20,6 @@ storage/default/https+++*
 
 .gradle/
 .npm/
+node_modules/
+.pytest_cache/
 
