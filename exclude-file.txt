@@ -1,0 +1,21 @@
+.cache/
+CacheStorage/
+Cache/
+cache/
+ScriptCache/
+GPUCache/
+optimization_guide_hint_cache_store/
+Code Cache/
+*cache.data
+*cache.data-*
+
+IndexedDB/
+.config/Microsoft/Microsoft Teams/
+.config/Slack/
+datareporting/archived/
+.config/google-chrome/hyphen-data/
+storage/default/https+++*
+
+.gradle/
+.npm/
+

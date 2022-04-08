@@ -2,7 +2,7 @@
 
 cd "$(dirname "$0")"
 
-rsync_cmd="rsync --archive --verbose"
+rsync_cmd="rsync --archive --verbose --exclude-from=exclude-file.txt"
 
 
 # Determine if `--dry-run`
